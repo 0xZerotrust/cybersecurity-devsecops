@@ -12,7 +12,7 @@ Before starting, make sure you have the following:
 ## Setting up a Secure Jenkins Environment
 
 1. Install Jenkins using Docker:
-docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
+`docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts`
 
 2. Access Jenkins through your browser at `http://localhost:8080` and follow the setup wizard.
 
