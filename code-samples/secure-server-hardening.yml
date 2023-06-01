@@ -1,0 +1,29 @@
+# Ansible Playbook for Secure Server Hardening
+
+---
+- name: Secure Server Hardening
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Update system packages
+      apt:
+        upgrade: safe
+        update_cache: yes
+
+    - name: Enable firewall
+      ufw:
+        state: enabled
+        rules:
+          - name: Allow SSH
+            port: 22
+            proto: tcp
+          - name: Allow HTTP
+            port: 80
+            proto: tcp
+
+    - name: Install fail2ban
+      apt:
+        name: fail2ban
+        state: present
+
+    # Add more tasks for secure server hardening
