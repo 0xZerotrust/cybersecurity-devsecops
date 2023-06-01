@@ -50,7 +50,8 @@ stage('Security Checks') {
             sh 'mvn sonar:sonar'
         }
     }
-}```
+}
+```
 
 Customize the security checks based on your project's requirements and the plugins you have installed.
 
