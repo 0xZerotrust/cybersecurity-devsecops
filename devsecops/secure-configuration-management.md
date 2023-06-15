@@ -2,7 +2,10 @@
 
 Proper configuration management is crucial for maintaining a secure cloud environment. In this article, we explore best practices for secure configuration management in popular cloud platforms. From secure storage and access management to network configuration and logging, learn how to effectively secure your cloud infrastructure and protect your assets.
 
-<!-- Configure AWS provider -->
+
+# Terraform's configuration 
+
+Configure AWS provider
 
 ```terraform
 provider "aws" {
@@ -18,9 +21,11 @@ resource "aws_secretsmanager_secret" "my_secret" {
   "password": "mypassword"
 }
 EOF
-}
-<!-- Access Management - Create an IAM policy -->
-resource "aws_iam_policy" "read_resource_group_policy" {
+}```
+
+Access Management - Create an IAM policy
+
+```resource "aws_iam_policy" "read_resource_group_policy" {
   name        = "AllowReadResourceGroup"  # Name of the policy
   description = "Allow read access to a specific resource group"
 
@@ -56,8 +61,10 @@ resource "aws_iam_policy" "read_resource_group_policy" {
 }
 EOF
 }
-<!-- Network Configuration - Create a security group allowing inbound HTTP traffic -->
-resource "aws_security_group" "http_security_group" {
+```
+Network Configuration - Create a security group allowing inbound HTTP traffic
+
+```resource "aws_security_group" "http_security_group" {
   name        = "http-security-group"  # Name of the security group
   description = "Allow inbound HTTP traffic"
   vpc_id      = "vpc-12345678"  # ID of the VPC to associate the security group with
@@ -68,12 +75,14 @@ resource "aws_security_group" "http_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow traffic from any source IP
   }
-}
-<!-- Logging and Monitoring - Create a CloudTrail trail -->
-resource "aws_cloudtrail" "my_trail" {
+}```
+
+Logging and Monitoring - Create a CloudTrail trail
+
+```resource "aws_cloudtrail" "my_trail" {
   name                          = "my-trail"  # Name of the CloudTrail trail
   s3_bucket_name                = "my-bucket"  # Name of the S3 bucket to store CloudTrail logs
   is_multi_region_trail         = true  # Enable multi-region logging
   enable_logging                = true  # Enable CloudTrail logging
   include_global_service_events = true  # Include global service events in the logs
-}
+}```
