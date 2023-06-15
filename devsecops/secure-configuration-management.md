@@ -10,8 +10,8 @@ Configure AWS provider
 ```terraform
 provider "aws" {
   region = "us-west-2"  # Replace with your desired AWS region
-}```
-
+}
+```
 Secure Storage - Create a secret in AWS Secrets Manager
 
 ```resource "aws_secretsmanager_secret" "my_secret" {
