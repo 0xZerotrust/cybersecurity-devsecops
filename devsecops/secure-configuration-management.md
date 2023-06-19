@@ -7,14 +7,16 @@ Proper configuration management is crucial for maintaining a secure cloud enviro
 
 Configure AWS provider
 
-```terraform
+```
+terraform
 provider "aws" {
   region = "us-west-2"  # Replace with your desired AWS region
 }
 ```
 Secure Storage - Create a secret in AWS Secrets Manager
 
-```resource "aws_secretsmanager_secret" "my_secret" {
+```
+resource "aws_secretsmanager_secret" "my_secret" {
   name = "my-secret"  # Name of the secret
 
   secret_string = <<EOF
@@ -27,7 +29,8 @@ EOF
 ```
 Access Management - Create an IAM policy
 
-```resource "aws_iam_policy" "read_resource_group_policy" {
+```
+resource "aws_iam_policy" "read_resource_group_policy" {
   name        = "AllowReadResourceGroup"  # Name of the policy
   description = "Allow read access to a specific resource group"
 
@@ -66,7 +69,8 @@ EOF
 ```
 Network Configuration - Create a security group allowing inbound HTTP traffic
 
-```resource "aws_security_group" "http_security_group" {
+```
+resource "aws_security_group" "http_security_group" {
   name        = "http-security-group"  # Name of the security group
   description = "Allow inbound HTTP traffic"
   vpc_id      = "vpc-12345678"  # ID of the VPC to associate the security group with
