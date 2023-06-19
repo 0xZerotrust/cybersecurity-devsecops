@@ -77,7 +77,8 @@ Network Configuration - Create a security group allowing inbound HTTP traffic
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  # Allow traffic from any source IP
   }
-}```
+}
+```
 
 Logging and Monitoring - Create a CloudTrail trail
 
@@ -87,4 +88,5 @@ Logging and Monitoring - Create a CloudTrail trail
   is_multi_region_trail         = true  # Enable multi-region logging
   enable_logging                = true  # Enable CloudTrail logging
   include_global_service_events = true  # Include global service events in the logs
-}```
+}
+```
