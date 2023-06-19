@@ -82,7 +82,8 @@ Network Configuration - Create a security group allowing inbound HTTP traffic
 
 Logging and Monitoring - Create a CloudTrail trail
 
-```resource "aws_cloudtrail" "my_trail" {
+```
+resource "aws_cloudtrail" "my_trail" {
   name                          = "my-trail"  # Name of the CloudTrail trail
   s3_bucket_name                = "my-bucket"  # Name of the S3 bucket to store CloudTrail logs
   is_multi_region_trail         = true  # Enable multi-region logging
